@@ -1,0 +1,34 @@
+name: Assessment
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  assessment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          test -f index.html
+          test -f style.css
+          echo "Required files are present."
+
+      - name: Validate HTML
+        run: |
+          grep -q "<html" index.html
+          grep -q "<body" index.html
+          echo "HTML validation passed."
+
+      - name: Validate CSS
+        run: |
+          test -s style.css
+          echo "CSS validation passed."
