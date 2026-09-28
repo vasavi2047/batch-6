@@ -8,7 +8,7 @@
 
 body{
     padding:40px;
-    background-color: aqua;
+    background-color: beige;
 }
 
 h1{
@@ -27,6 +27,7 @@ button{
     font-size:15px;
     margin-left:10px;
     cursor:pointer;
+    color: blue;
 }
 
 ul{
